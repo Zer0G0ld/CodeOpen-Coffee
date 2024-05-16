@@ -47,6 +47,7 @@ button {
     top: 20px; /* Distância do topo */
     right: 20px; /* Distância da direita */
     z-index: 999; /* Z-index para garantir que o botão esteja acima de outros elementos */
+    cursor: pointer;
 }
 
 
