@@ -41,11 +41,29 @@ header h1 {
     color: var(--primary); /* Cor do texto */
 }
 
+button {
+    background-color: var(--backgorund);
+    position: fixed; /* Posição fixa na tela */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    z-index: 999; /* Z-index para garantir que o botão esteja acima de outros elementos */
+}
+
+
+.menu-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    color: var(--secundary); /* Cor do ícone */
+    margin-right: 10px; /* Margem à direita para separar do texto */
+    cursor: pointer; /* Cursor do mouse para indicar que é clicável */
+}
+
+
 /* Estilos para a barra de navegação */
 nav {
     text-align: center; /* Centraliza os links */
     padding: 20px; /* Adiciona preenchimento */
     background: var(--background-nav); /* Cor de fundo */
+    display: none; /* Oculta a navegação por padrão */
 }
 
 nav a {
@@ -116,15 +134,57 @@ footer {
     color: var(--background-nav); /* Cor do texto */
 }
 
+/* Estilos para telas maiores que 768px */
+@media (min-width: 769px) {
+    nav {
+        display: none; /* Exibe a navegação */
+    }
+
+    nav a {
+        display: block; /* Exibe os links como blocos */
+        margin: 10px 0; /* Adiciona margens */
+        text-decoration: none; /* Remove o sublinhado */
+        color: var(--primary); /* Cor do texto */
+        font-weight: bold; /* Define a espessura da fonte */
+    }
+
+    nav a:hover {
+        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
+    }
+
+    nav.show {
+        display: block; /* Torna a navegação visível quando a classe show é aplicada */
+    }
+}
+
 /* Estilos para telas menores que 768px */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2em; /* Reduz o tamanho da fonte do cabeçalho */
     }
 
+    /* Estilos para a barra de navegação */
+    nav {
+        text-align: center; /* Centraliza os links */
+        padding: 20px; /* Adiciona preenchimento */
+        background: var(--background-nav); /* Cor de fundo */
+        display: none; /* Oculta a navegação por padrão */
+    }
+
     nav a {
         display: block; /* Exibe os links como blocos */
         margin: 10px 0; /* Adiciona margens */
+        text-decoration: none; /* Remove o sublinhado */
+        color: var(--primary); /* Cor do texto */
+        font-weight: bold; /* Define a espessura da fonte */
+    }
+
+    nav a:hover {
+        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
+    }
+
+    nav.show {
+        display: block; /* Torna a navegação visível quando a classe show é aplicada */
     }
 
     .social-links {
