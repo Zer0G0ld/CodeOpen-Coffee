@@ -1,0 +1,114 @@
+:root {
+    --primary: #00ff00;
+    --secondary: #008000;
+    --background-home: #0d0d0d;
+    --background-nav: #262626;
+    --background: #1a1a1a;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-home);
+    color: var(--primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 0; /* Adicionado um comentário explicativo */
+    background: var(--background);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: var(--primary);
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    padding: 20px;
+    background: var(--background-nav);
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+/* Social Links */
+.social-links a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--background);
+    color: var(--background-nav);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .social-links a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
