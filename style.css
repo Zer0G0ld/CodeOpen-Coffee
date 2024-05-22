@@ -107,6 +107,38 @@ section {
     margin-right: 5px; /* Adiciona espaçamento à direita do ícone */
 }
 
+.instagram-media {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.instagram-media img {
+    width: 100%;
+}
+
+.instagram-media .ig-header {
+    background-color: #3897f0;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.instagram-media .ig-caption {
+    padding: 10px;
+}
+
+.instagram-media .ig-caption a {
+    color: #385185;
+    text-decoration: none;
+}
+
+.instagram-media .ig-caption a:hover {
+    text-decoration: underline;
+}
+
 
 /* Estilos para títulos de seção */
 h2 {
