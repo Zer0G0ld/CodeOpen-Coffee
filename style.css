@@ -87,6 +87,27 @@ section {
     margin: auto; /* Centraliza o contêiner na página */
 }
 
+/* Estilos para o botão da comunidade */
+.community-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secundary);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.community-button:hover {
+    background-color: var(--background-nav); /* Altere para a cor desejada ao passar o mouse */
+}
+
+/* Estilos para o ícone do WhatsApp */
+.community-button i {
+    margin-right: 5px; /* Adiciona espaçamento à direita do ícone */
+}
+
+
 /* Estilos para títulos de seção */
 h2 {
     font-size: 2em; /* Tamanho da fonte */
