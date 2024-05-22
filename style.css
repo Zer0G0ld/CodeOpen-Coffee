@@ -4,7 +4,7 @@
     --secundary: #008000; /* Cor secundária */
     --background-home: #0d0d0d; /* Cor de fundo da página inicial */
     --background-nav: #262626; /* Cor de fundo da barra de navegação */
-    --backgorund: #1a1a1a; /* Cor de fundo geral */
+    --background: #1a1a1a; /* Cor de fundo geral */
 }
 
 /* Estilos para o corpo do documento e a página HTML */
@@ -32,7 +32,7 @@ a:hover {
 header {
     text-align: center; /* Centraliza o texto */
     padding: 50px 0; /* Adiciona preenchimento superior e inferior */
-    background: var(--backgorund); /* Cor de fundo */
+    background: var(--background); /* Cor de fundo */
 }
 
 header h1 {
@@ -41,15 +41,15 @@ header h1 {
     color: var(--primary); /* Cor do texto */
 }
 
+/* Estilos para o botão do menu */
 button {
-    background-color: var(--backgorund);
+    background-color: var(--background);
     position: fixed; /* Posição fixa na tela */
     top: 20px; /* Distância do topo */
     right: 20px; /* Distância da direita */
     z-index: 999; /* Z-index para garantir que o botão esteja acima de outros elementos */
     cursor: pointer;
 }
-
 
 .menu-icon {
     font-size: 24px; /* Tamanho do ícone */
@@ -58,13 +58,11 @@ button {
     cursor: pointer; /* Cursor do mouse para indicar que é clicável */
 }
 
-
 /* Estilos para a barra de navegação */
 nav {
     text-align: center; /* Centraliza os links */
     padding: 20px; /* Adiciona preenchimento */
     background: var(--background-nav); /* Cor de fundo */
-    display: none; /* Oculta a navegação por padrão */
 }
 
 nav a {
@@ -131,19 +129,19 @@ h2 {
 footer {
     text-align: center; /* Centraliza o texto */
     padding: 20px; /* Adiciona preenchimento */
-    background: var(--backgorund); /* Cor de fundo */
+    background: var(--background); /* Cor de fundo */
     color: var(--background-nav); /* Cor do texto */
 }
 
 /* Estilos para telas maiores que 768px */
 @media (min-width: 769px) {
     nav {
-        display: none; /* Exibe a navegação */
+        display: block; /* Exibe a navegação */
     }
 
     nav a {
-        display: block; /* Exibe os links como blocos */
-        margin: 10px 0; /* Adiciona margens */
+        display: inline-block; /* Exibe os links como blocos inline */
+        margin: 0 15px; /* Adiciona margens */
         text-decoration: none; /* Remove o sublinhado */
         color: var(--primary); /* Cor do texto */
         font-weight: bold; /* Define a espessura da fonte */
@@ -164,44 +162,12 @@ footer {
         font-size: 2em; /* Reduz o tamanho da fonte do cabeçalho */
     }
 
-    /* Estilos para a barra de navegação */
     nav {
-        text-align: center; /* Centraliza os links */
-        padding: 20px; /* Adiciona preenchimento */
-        background: var(--background-nav); /* Cor de fundo */
         display: none; /* Oculta a navegação por padrão */
-    }
-
-    nav a {
-        display: block; /* Exibe os links como blocos */
-        margin: 10px 0; /* Adiciona margens */
-        text-decoration: none; /* Remove o sublinhado */
-        color: var(--primary); /* Cor do texto */
-        font-weight: bold; /* Define a espessura da fonte */
-    }
-
-    nav a:hover {
-        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
     }
 
     nav.show {
         display: block; /* Torna a navegação visível quando a classe show é aplicada */
-    }
-
-    .social-links {
-        display: flex; /* Exibe os links de redes sociais de forma flexível */
-        justify-content: center; /* Centraliza os links horizontalmente */
-    }
-    
-    .social-links a {
-        color: var(--primary); /* Cor do texto */
-        text-decoration: none; /* Remove o sublinhado */
-        margin: 0 10px; /* Adiciona margens aos links */
-        font-size: 1.5em; /* Tamanho da fonte */
-    }
-    
-    .social-links a:hover {
-        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
     }
 
     .youtube-playlist iframe {
@@ -223,21 +189,4 @@ footer {
     .container {
         padding: 0 10px; /* Reduz o preenchimento dos contêineres */
     }
-
-    .social-links {
-        display: flex; /* Exibe os links de redes sociais de forma flexível */
-       
-        justify-content: center; /* Centraliza os links horizontalmente */
-    }
-    
-    .social-links a {
-        color: var(--primary); /* Cor do texto */
-        text-decoration: none; /* Remove o sublinhado */
-        margin: 0 10px; /* Adiciona margens aos links */
-        font-size: 1.5em; /* Tamanho da fonte */
-    }
-    
-    .social-links a:hover {
-        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
-    }
-}    
+}
