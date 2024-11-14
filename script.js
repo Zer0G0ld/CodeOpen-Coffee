@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav");
+    const navMenu = document.querySelector("nav ul.menu");
 
-    if (menuToggle && nav) {
+    if (menuToggle && navMenu) {
         menuToggle.addEventListener("click", function() {
-            nav.classList.toggle("show");
+            navMenu.classList.toggle("show");
         });
     }
 });

@@ -1,245 +1,224 @@
-/* Definição das variáveis de cor */
-:root {
-    --primary: #ffffff; /* Cor primária */
-    --secundary: #008000; /* Cor secundária */
-    --background-home: #0d0d0d; /* Cor de fundo da página inicial */
-    --background-nav: #262626; /* Cor de fundo da barra de navegação */
-    --background: #1a1a1a; /* Cor de fundo geral */
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilos para o corpo do documento e a página HTML */
-body, html {
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    background-color: var(--background-home); /* Cor de fundo */
-    color: var(--primary); /* Cor do texto */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove preenchimentos */
-    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
 }
 
-/* Estilos para links */
+/* Estilos do Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007acc;
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #007acc;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffe600;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Efeito Animado para Links */
 a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: inherit; /* Usa a cor padrão do texto */
-    transition: color 0.3s ease; /* Adiciona uma transição suave na mudança de cor */
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Sublinhado Animado */
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Distância do sublinhado em relação ao texto */
+    width: 100%;
+    height: 2px;
+    background-color: #ffe600;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
 a:hover {
-    color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
+    color: #005fa3;
+    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
 }
 
-/* Estilos para o cabeçalho */
-header {
-    text-align: center; /* Centraliza o texto */
-    padding: 50px 0; /* Adiciona preenchimento superior e inferior */
-    background: var(--background); /* Cor de fundo */
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
-header h1 {
-    margin: 0; /* Remove margens */
-    font-size: 3em; /* Tamanho da fonte */
-    color: var(--primary); /* Cor do texto */
-}
-
-/* Estilos para o botão do menu */
-button {
-    background-color: var(--background);
-    position: fixed; /* Posição fixa na tela */
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
-    z-index: 999; /* Z-index para garantir que o botão esteja acima de outros elementos */
-    cursor: pointer;
-}
-
-.menu-icon {
-    font-size: 24px; /* Tamanho do ícone */
-    color: var(--secundary); /* Cor do ícone */
-    margin-right: 10px; /* Margem à direita para separar do texto */
-    cursor: pointer; /* Cursor do mouse para indicar que é clicável */
-}
-
-/* Estilos para a barra de navegação */
-nav {
-    text-align: center; /* Centraliza os links */
-    padding: 20px; /* Adiciona preenchimento */
-    background: var(--background-nav); /* Cor de fundo */
-}
-
-nav a {
-    margin: 0 15px; /* Adiciona margens aos links */
-    text-decoration: none; /* Remove o sublinhado */
-    color: var(--primary); /* Cor do texto */
-    font-weight: bold; /* Define a espessura da fonte */
-}
-
-nav a:hover {
-    color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
-}
-
-/* Estilos para seções */
-section {
-    padding: 50px 20px; /* Adiciona preenchimento */
-}
-
-/* Estilos para o conteúdo dentro de um contêiner */
+/* Estilos da Main Container */
 .container {
-    max-width: 800px; /* Largura máxima do contêiner */
-    margin: auto; /* Centraliza o contêiner na página */
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Estilos para o botão da comunidade */
-.community-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--secundary);
-    color: var(--primary);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.community-button:hover {
-    background-color: var(--background-nav); /* Altere para a cor desejada ao passar o mouse */
-}
-
-/* Estilos para o ícone do WhatsApp */
-.community-button i {
-    margin-right: 5px; /* Adiciona espaçamento à direita do ícone */
-}
-
-.instagram-media {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background-color: #f9f9f9;
-}
-
-.instagram-media img {
-    width: 100%;
-}
-
-.instagram-media .ig-header {
-    background-color: #3897f0;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-}
-
-.instagram-media .ig-caption {
-    padding: 10px;
-}
-
-.instagram-media .ig-caption a {
-    color: #385185;
-    text-decoration: none;
-}
-
-.instagram-media .ig-caption a:hover {
-    text-decoration: underline;
-}
-
-
-/* Estilos para títulos de seção */
 h2 {
-    font-size: 2em; /* Tamanho da fonte */
-    border-bottom: 2px solid var(--primary); /* Adiciona uma borda inferior */
-    padding-bottom: 10px; /* Adiciona preenchimento inferior */
+    margin-bottom: 20px;
+    color: #007acc;
 }
 
-/* Estilos para links de redes sociais */
-.social-links {
-    display: flex; /* Exibe os links de forma flexível */
-    justify-content: center; /* Centraliza os links horizontalmente */
-}
-
-.social-links a {
-    color: var(--primary); /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    margin: 0 10px; /* Adiciona margens aos links */
-    font-size: 1.5em; /* Tamanho da fonte */
-}
-
-.social-links a:hover {
-    color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
-}
-
-/* Estilos para a exibição de playlists do YouTube */
-.youtube-playlist {
-    display: flex; /* Exibe os itens de forma flexível */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    justify-content: space-around; /* Distribui os itens uniformemente ao redor do espaço disponível */
-    gap: 20px; /* Define o espaçamento entre os itens */
-}
-
-.youtube-playlist iframe {
-    flex: 1 1 45%; /* Define a proporção de flexibilidade e tamanho máximo */
-    max-width: 100%; /* Define a largura máxima */
-    height: 315px; /* Define a altura */
-}
-
-/* Estilos para o rodapé */
+/* Estilos do Rodapé */
 footer {
-    text-align: center; /* Centraliza o texto */
-    padding: 20px; /* Adiciona preenchimento */
-    background: var(--background); /* Cor de fundo */
-    color: var(--background-nav); /* Cor do texto */
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para telas maiores que 768px */
-@media (min-width: 769px) {
-    nav {
-        display: block; /* Exibe a navegação */
-    }
-
-    nav a {
-        display: inline-block; /* Exibe os links como blocos inline */
-        margin: 0 15px; /* Adiciona margens */
-        text-decoration: none; /* Remove o sublinhado */
-        color: var(--primary); /* Cor do texto */
-        font-weight: bold; /* Define a espessura da fonte */
-    }
-
-    nav a:hover {
-        color: var(--secundary); /* Muda a cor do texto ao passar o mouse sobre o link */
-    }
-
-    nav.show {
-        display: block; /* Torna a navegação visível quando a classe show é aplicada */
-    }
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-/* Estilos para telas menores que 768px */
+.social-icons a {
+    color: #007acc; /* Cor padrão dos ícones */
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffe600; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.social-icons a:focus {
+    outline: 2px solid #007acc; /* Para acessibilidade */
+    outline-offset: 4px;
+}
+
+
+/* Media Queries para Responsividade */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em; /* Reduz o tamanho da fonte do cabeçalho */
+    .menu-toggle {
+        display: block;
     }
 
-    nav {
-        display: none; /* Oculta a navegação por padrão */
+    nav ul {
+        display: none;
     }
 
-    nav.show {
-        display: block; /* Torna a navegação visível quando a classe show é aplicada */
+    nav ul.menu {
+        display: none;
     }
 
-    .youtube-playlist iframe {
-        flex: 1 1 100%; /* Define a proporção de flexibilidade */
-        max-width: 100%; /* Define a largura máxima */
+    nav ul.menu.show {
+        display: flex;
     }
 }
 
-/* Estilos para telas menores que 480px */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em; /* Reduz ainda mais o tamanho da fonte do cabeçalho */
-    }
+/* Efeitos para Links e Botões */
+a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    section {
-        padding: 20px 10px; /* Reduz o preenchimento das seções */
-    }
+a:hover {
+    color: #007acc;
+    transform: scale(1.1);
+}
 
-    .container {
-        padding: 0 10px; /* Reduz o preenchimento dos contêineres */
-    }
+button {
+    background-color: #007acc;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
 }
