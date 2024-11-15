@@ -48,21 +48,101 @@
         </ul>
     </section>
     
-    <!-- Seção Porfólio -->
-    <section id="portfolio" class="container">
-        <h2>Portfólio</h2>
-        <ul>
-            <li><a href="https://github.com/Zer0G0ld/TZSoundwave" target="_blank">TZSoundwave - Bot de Música para Discord</a></li>
-            <li><a href="https://github.com/Zer0G0ld/rede_neural" target="_blank">Rede Neural - Experimentos em redes neurais</a></li>
-            <li><a href="https://github.com/Zer0G0ld/decodeX" target="_blank">decodeX - Ferramenta de descriptografia</a></li>
-            <li><a href="https://github.com/Zer0G0ld/Text.Readeer.Zer0" target="_blank">Text Readeer - Extensão de leitura para Chrome</a></li>
-        </ul>
-    </section>
+<!-- Seção Portfólio -->
+<section id="portfolio" class="container">
+    <h2>Portfólio</h2>
+    <div class="portfolio-cards">
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/TZSoundwave" target="_blank">
+                <h3>TZSoundwave</h3>
+                <p>Bot de Música para Discord</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/rede_neural" target="_blank">
+                <h3>Rede Neural</h3>
+                <p>Experimentos em redes neurais</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/decodeX" target="_blank">
+                <h3>decodeX</h3>
+                <p>Ferramenta de descriptografia</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/Text.Readeer.Zer0" target="_blank">
+                <h3>Text Readeer</h3>
+                <p>Extensão de leitura para Chrome</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/Zer0S" target="_blank">
+                <h3>Zer0S</h3>
+                <p>Desenvolvimento de um Sistema Operacional em C</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/Zer0View" target="_blank">
+                <h3>Zer0View</h3>
+                <p>Aplicativo moderno para visualização de imagens e vídeos</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/Zero" target="_blank">
+                <h3>Zero</h3>
+                <p>Bot personalizado para o Discord com várias funcionalidades</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/GerenciadorTarefas" target="_blank">
+                <h3>Gerenciador de Tarefas</h3>
+                <p>Aplicação de gerenciamento de tarefas para produtividade</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/Zer0G0ld/Text.Readeer.Zer0" target="_blank">
+                <h3>Text.Readeer.Zer0</h3>
+                <p>Extensão para Chrome que lê em voz alta qualquer texto selecionado</p>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <!-- Seção Contato -->
-<section id="contato" class="container">
+
+<!-- Seção Contato -->
+<section id="contato" class="container contato-section">
     <h2>Contato</h2>
-    <p>Entre em contato comigo através dos links abaixo.</p>
+    <p>Gostaria de colaborar ou tem alguma dúvida? Fique à vontade para entrar em contato!</p>
+    
+    <!-- Formulário de Contato -->
+    <form class="contact-form" action="mailto:matheus321trabalho@gmail.com" method="post" enctype="text/plain" novalidate>
+        <div class="form-group">
+            <label for="name">Seu Nome</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" aria-label="Nome" aria-describedby="nameError" required>
+            <span class="error-message" id="nameError" aria-live="polite">Por favor, insira seu nome.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Seu Email</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" aria-label="Email" aria-describedby="emailError" required>
+            <span class="error-message" id="emailError" aria-live="polite">Por favor, insira um email válido.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Sua Mensagem</label>
+            <textarea id="message" name="message" rows="4" placeholder="Digite sua mensagem" aria-label="Mensagem" aria-describedby="messageError" required></textarea>
+            <span class="error-message" id="messageError" aria-live="polite">Por favor, insira sua mensagem.</span>
+        </div>
+
+        <button type="submit">Enviar Mensagem</button>
+        <p class="success-message" id="successMessage" aria-live="polite"></p>
+    </form>
+</section>
+
+
+    
+    <!-- Ícones Sociais -->
     <div class="social-icons">
         <a href="mailto:matheus321trabalho@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar Email" title="Enviar Email">
             <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -78,6 +158,7 @@
         </a>
     </div>
 </section>
+
 </main>
 
 <!-- Rodapé -->
