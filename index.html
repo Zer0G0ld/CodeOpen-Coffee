@@ -119,13 +119,13 @@
     <form class="contact-form" action="mailto:matheus321trabalho@gmail.com" method="post" enctype="text/plain" novalidate>
         <div class="form-group">
             <label for="name">Seu Nome</label>
-            <input type="text" id="name" name="name" placeholder="Digite seu nome" aria-label="Nome" aria-describedby="nameError" required>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Digite seu nome" aria-label="Nome" aria-describedby="nameError" required>
             <span class="error-message" id="nameError" aria-live="polite">Por favor, insira seu nome.</span>
         </div>
 
         <div class="form-group">
             <label for="email">Seu Email</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu email" aria-label="Email" aria-describedby="emailError" required>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="Digite seu email" aria-label="Email" aria-describedby="emailError" required>
             <span class="error-message" id="emailError" aria-live="polite">Por favor, insira um email válido.</span>
         </div>
 
@@ -164,6 +164,7 @@
 <!-- Rodapé -->
 <footer>
     <p>&copy; 2024 CodeOpen. Todos os direitos reservados.</p>
+    <a href="#inicio">Voltar ao topo</a>
 </footer>
 
 <!-- Scripts -->

@@ -19,13 +19,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007acc;
+    background-color: rgba(0, 122, 204, 0.8);
+    transition: background-color 0.3s ease;
     padding: 15px 30px;
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+header.scrolled {
+    background-color: #007acc;
 }
 
 .menu-toggle {
@@ -62,14 +67,6 @@ nav ul.menu {
     border-radius: 0 0 10px 10px;
 }
 
-nav ul li {
-    margin-bottom: 10px;
-}
-
-nav ul li:last-child {
-    margin-bottom: 0;
-}
-
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -91,7 +88,6 @@ a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Sublinhado Animado para Links */
 a::after {
     content: "";
     position: absolute;
@@ -117,12 +113,19 @@ a:hover::after {
 
 /* Container Principal */
 .container {
+    opacity: 0;
     margin-top: 40px;
     padding: 30px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container:hover {
@@ -135,7 +138,7 @@ h2 {
     color: #007acc;
 }
 
-/* Estilos para Portfólio em Cards */
+/* Estilos para Cards */
 .portfolio-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -152,31 +155,16 @@ h2 {
     text-align: center;
 }
 
-.card a {
-    text-decoration: none;
-    color: #007acc;
-    display: block;
-    height: 100%;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    color: #007acc;
-    font-size: 1.3rem;
-}
-
-.card p {
-    color: #555;
-    font-size: 1rem;
-}
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.card a:hover {
-    color: #005fa3;
+.card a {
+    text-decoration: none;
+    color: #007acc;
+    display: block;
+    height: 100%;
 }
 
 /* Estilos do Formulário */
@@ -191,7 +179,6 @@ h2 {
 
 .form-group {
     margin-bottom: 20px;
-    position: relative;
 }
 
 label {
@@ -204,6 +191,7 @@ label {
 input, textarea {
     width: 100%;
     padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
@@ -211,9 +199,19 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
+    outline: none;
     border-color: #007acc;
     box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
-    outline: none;
+}
+
+input:invalid, textarea:invalid {
+    border-color: #e63946;
+}
+
+.success-message {
+    color: #4caf50;
+    margin-top: 10px;
+    display: none;
 }
 
 button {
@@ -231,28 +229,27 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Mensagens de Erro */
-.error-message {
-    display: none;
-    font-size: 0.9rem;
-    color: #e63946;
-    margin-top: 5px;
-}
-
-/* Efeitos ao Focar no Campo com Erro */
-input:invalid, textarea:invalid {
-    border-color: #e63946;
-}
-
-/* Media Queries para Responsividade */
+/* Media Queries */
 @media (max-width: 768px) {
-    .contact-form {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul.menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
         padding: 20px;
     }
 }
 
-
-/* Estilos do Rodapé */
+/* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
@@ -279,65 +276,4 @@ footer {
 .social-icons a:hover {
     color: #ffe600;
     transform: scale(1.2);
-}
-
-.social-icons a:focus {
-    outline: 2px solid #007acc;
-    outline-offset: 4px;
-}
-
-/* Estilos para Formulários */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #007acc;
-    box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
-}
-
-button {
-    background-color: #007acc;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #005fa3;
-    transform: translateY(-2px);
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul.menu {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .portfolio-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .container {
-        padding: 20px;
-    }
 }
